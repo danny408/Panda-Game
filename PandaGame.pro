@@ -13,9 +13,11 @@ TEMPLATE = app
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    animation.cpp
 
-HEADERS  +=
+HEADERS  += \
+    animation.hpp
 
 FORMS    +=
 
@@ -29,4 +31,5 @@ DEPENDPATH += C:/SFML/include
 
 DISTFILES += \
     Feather.ogg \
-    panda.jpg
+    panda.jpg \
+    bamboo.png
