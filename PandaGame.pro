@@ -29,4 +29,4 @@ DEPENDPATH += C:/SFML/include
 
 DISTFILES += \
     Feather.ogg \
-    Panda.png
+    panda.jpg

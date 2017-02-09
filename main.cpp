@@ -11,7 +11,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1200, 900), "SFML works!");
 
     sf::Texture panda;
-    if(!panda.loadFromFile("H:/Qtbuilds/Pandagame/panda.png")){
+    if(!panda.loadFromFile("H:/Qtbuilds/Pandagame/panda.jpg")){
         std::cout << "Error1\n";
         return -1;
     }
