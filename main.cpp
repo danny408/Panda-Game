@@ -8,7 +8,6 @@
 #include <iostream>
 int main()
 {
-
     sf::RenderWindow window(sf::VideoMode(1200, 900), "SFML works!");
 
     sf::Texture panda;
