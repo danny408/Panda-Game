@@ -1,16 +1,16 @@
-#ifndef SPLASHSCREEN_H
-#define SPLASHSCREEN_H
+#ifndef TITLESCREEN_H
+#define TITLESCREEN_H
 
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include "gamescreen.h"
 #include "screenmanager.h"
-#include "titlescreen.h"
+#include "splashscreen.h"
 
-class SplashScreen : public GameScreen {
+class TitleScreen : public GameScreen {
  public:
-  SplashScreen();
-  ~SplashScreen();
+  TitleScreen();
+  ~TitleScreen();
 
   void load_content();
   void unload_content();
@@ -22,4 +22,4 @@ class SplashScreen : public GameScreen {
   sf::Font font;
 };
 
-#endif  // SPLASHSCREEN_H
+#endif  // TITLESCREEN_H
