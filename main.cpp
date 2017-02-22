@@ -8,8 +8,8 @@
 //#include "SFML/System.hpp"
 //#include "SFML/Window.hpp"
 
-#include "animation.hpp"
-#include "screenmanager.h"
+#include "inc/animation.hpp"
+#include "inc/screenmanager.h"
 
 #include <iostream>
 

@@ -1,4 +1,4 @@
-#include "titlescreen.h"
+#include "inc/titlescreen.hpp"
 
 TitleScreen::TitleScreen() {}
 

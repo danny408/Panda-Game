@@ -1,4 +1,4 @@
-#include "animation.hpp"
+#include "inc/animation.hpp"
 
 void Animation::addFrame(const sf::IntRect& frame, float timeToNextFrame)
 {

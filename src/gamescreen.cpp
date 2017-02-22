@@ -1,4 +1,4 @@
-#include "gamescreen.h"
+#include "inc/gamescreen.hpp"
 
 GameScreen::GameScreen() {}
 

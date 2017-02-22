@@ -1,4 +1,4 @@
-#include "splashscreen.h"
+#include "inc/splashscreen.hpp"
 
 SplashScreen::SplashScreen() {}
 

@@ -1,4 +1,4 @@
-#include "inputmanager.h"
+#include "inc/inputmanager.hpp"
 #include <iostream>
 InputManager::InputManager() {}
 

@@ -1,4 +1,4 @@
-#include "screenmanager.h"
+#include "inc/screenmanager.hpp"
 
 GameScreen *current_screen, *new_screen;
 
