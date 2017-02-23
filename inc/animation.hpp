@@ -1,32 +1,33 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
-#include <SFML/Graphics.hpp>
-#include <vector>
 
-class Animation{
+#include <iostream>
+#include <string>
+#include "SFML/Graphics.hpp"
 
-    struct Frame{
-        Frame(const sf::IntRect& frame, float timeToNextFrame)
-        :   frame           (frame)
-        ,   timeToNextFrame (timeToNextFrame) {}
+class Animation {
+ public:
+  Animation();
+  ~Animation();
+  virtual void load_content(std::string text, sf::Image image,
+                            sf::Vector2f position);
+  virtual void unload_content();
+  virtual void update(sf::Time delta_time);
+  virtual void set_alpha(float alpha);
+  virtual void draw(sf::RenderWindow &window);
+  float get_alpha();
+  void set_active(bool value);
 
-        sf::IntRect frame;
-        float       timeToNextFrame;
-    };
-
-    public:
-        void addFrame (const sf::IntRect& frame, float timeToNextFrame);
-
-        const sf::IntRect getFrame();
-
-
-    private:
-        std::vector<Frame> m_frames;
-
-        sf::Clock   m_timer;
-        unsigned    m_currentFrame      = 0;
-        float       m_longestFrameTime  = 0;
+ protected:
+  float alpha;
+  std::string pre_text;
+  sf::Text text;
+  sf::Image image;
+  sf::Sprite sprite;
+  sf::Texture texture;
+  sf::Vector2f position;
+  sf::Color text_color;
+  bool active;
 };
 
-
-#endif // ANIMATION_H
+#endif  // Animation_H

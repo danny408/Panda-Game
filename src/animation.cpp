@@ -1,22 +1,39 @@
 #include "inc/animation.hpp"
 
-void Animation::addFrame(const sf::IntRect& frame, float timeToNextFrame)
-{
-    if (timeToNextFrame > m_longestFrameTime)
-        m_longestFrameTime = timeToNextFrame;
+Animation::Animation() {}
 
-    m_frames.emplace_back(frame, timeToNextFrame);
+Animation::~Animation() {}
+
+void Animation::load_content(std::string text, sf::Image image,
+                             sf::Vector2f position) {
+  this->pre_text = text;
+  this->image = image;
+  this->position = position;
+  alpha = 1.0f;
+  text_color = sf::Color(114, 77, 255);
+  if (image.getSize().y > 0) {
+    texture.loadFromImage(image);
+    sprite.setTexture(texture);
+  }
+  this->text.setString(text);
+  active = false;
 }
 
-const sf::IntRect Animation::getFrame()
-{
-    if (m_timer.getElapsedTime().asSeconds() >= m_frames[m_currentFrame].timeToNextFrame)
-    {
-        m_currentFrame++;
-        if (m_currentFrame == m_frames.size() )
-            m_currentFrame = 0;
-        m_timer.restart().asSeconds();
-    }
+void Animation::unload_content() {}
+void Animation::update(sf::Time delta_time) {}
 
-    return  m_frames[m_currentFrame].frame;
+void Animation::draw(sf::RenderWindow &window) {
+  std::string str = text.getString();
+  if (str != "") {
+    window.draw(text);
+  }
+  if (sprite.getTexture() != NULL) {
+    window.draw(sprite);
+  }
 }
+
+float Animation::get_alpha() { return alpha; }
+
+void Animation::set_active(bool value) { active = value; }
+
+void Animation::set_alpha(float alpha) {}

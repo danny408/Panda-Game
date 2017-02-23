@@ -19,13 +19,22 @@ int main() {
   sf::RenderWindow window(sf::VideoMode(SCREENWIDTH, SCREENHEIGHT, 32),
                           "Nevinyrral's Bamboo Forest Adventure");
 
+  sf::RectangleShape fade;
+  fade.setPosition(0, 0);
+  fade.setSize(sf::Vector2f(SCREENWIDTH, SCREENHEIGHT));
+  fade.setOutlineColor(sf::Color(255, 255, 255));
+
   ScreenManager::get_instance().initialize();
   ScreenManager::get_instance().load_content();
 
   window.setKeyRepeatEnabled(false);
 
+  // Game Clock
+  sf::Clock clock;
   sf::Event event;
+
   while (window.isOpen()) {
+    sf::Time animation_clock = clock.restart();
     while (window.pollEvent(event)) {
       switch (event.type) {
         // window closed
@@ -36,14 +45,15 @@ int main() {
         default:
           break;
       }
-      ScreenManager::get_instance().update(window, event);
+      ScreenManager::get_instance().update(window, event, animation_clock);
     }
 
-    window.clear();
+    window.clear(sf::Color());
 
-    // ScreenManager::get_instance().update(event);
+    fade.setFillColor(
+        sf::Color(0, 0, 0, 255 * ScreenManager::get_instance().get_alpha()));
     ScreenManager::get_instance().draw(window);
-
+    window.draw(fade);
     window.display();
   }
 
