@@ -5,7 +5,7 @@ TitleScreen::TitleScreen() {}
 TitleScreen::~TitleScreen() {}
 
 void TitleScreen::load_content() {
-  if (!font.loadFromFile("H:/QtBuilds/PandaGame/FiraCode-Regular.ttf")) {
+  if (!font.loadFromFile("H:/QtBuilds/PandaGame/rsc/FiraCode-Regular.ttf")) {
     std::cout << "Cant find font\n";
   }
   text.setString("TitleScreen");

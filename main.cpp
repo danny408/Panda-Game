@@ -9,7 +9,7 @@
 //#include "SFML/Window.hpp"
 
 #include "inc/animation.hpp"
-#include "inc/screenmanager.h"
+#include "inc/screenmanager.hpp"
 
 #include <iostream>
 
