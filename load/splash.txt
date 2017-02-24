@@ -1,0 +1,4 @@
+Load = [Image]
+[H:/QtBuilds/PandaGame/rsc/bamboo-1.png]
+[H:/QtBuilds/PandaGame/rsc/bamboo-2.jpg]
+[H:/QtBuilds/PandaGame/rsc/bamboo-3.jpg]

@@ -11,6 +11,7 @@ void GameScreen::unload_content() {
   //  input = NULL;
 }
 
-void GameScreen::update(sf::RenderWindow &window, sf::Event event) {}
+void GameScreen::update(sf::RenderWindow &window, sf::Event event,
+                        sf::Time delta_time) {}
 
 void GameScreen::draw(sf::RenderWindow &window) {}

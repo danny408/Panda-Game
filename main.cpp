@@ -34,7 +34,6 @@ int main() {
   sf::Event event;
 
   while (window.isOpen()) {
-    sf::Time animation_clock = clock.restart();
     while (window.pollEvent(event)) {
       switch (event.type) {
         // window closed
@@ -45,7 +44,7 @@ int main() {
         default:
           break;
       }
-      ScreenManager::get_instance().update(window, event, animation_clock);
+      ScreenManager::get_instance().update(window, event, clock.restart());
     }
 
     window.clear(sf::Color());

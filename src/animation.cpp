@@ -12,7 +12,7 @@ void Animation::load_content(std::string text, sf::Image image,
   alpha = 1.0f;
   text_color = sf::Color(114, 77, 255);
   if (image.getSize().y > 0) {
-    texture.loadFromImage(image);
+    texture.loadFromImage(this->image);
     sprite.setTexture(texture);
   }
   this->text.setString(text);
@@ -20,7 +20,9 @@ void Animation::load_content(std::string text, sf::Image image,
 }
 
 void Animation::unload_content() {}
-void Animation::update(sf::Time delta_time) {}
+void Animation::update(sf::Time delta_time) {
+  sprite.setColor(sf::Color(255, 255, 255, 255 * alpha));
+}
 
 void Animation::draw(sf::RenderWindow &window) {
   std::string str = text.getString();

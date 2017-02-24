@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "inc/fadeanimation.hpp"
+#include "inc/filemanager.hpp"
 #include "inc/gamescreen.hpp"
 #include "inc/splashscreen.hpp"
 #include "inc/titlescreen.hpp"
@@ -33,6 +34,9 @@ class ScreenManager {
   bool transition;
   FadeAnimation fade;
   GameScreen *new_screen;
+  FileManager file;
+  std::vector<std::vector<std::string>> attributes;
+  std::vector<std::vector<std::string>> contents;
 };
 
 #endif  // SCREENMANAGER_H

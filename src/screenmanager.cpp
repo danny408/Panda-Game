@@ -15,9 +15,11 @@ void ScreenManager::initialize() {
   current_screen = new SplashScreen();
   transition = false;
 
-  sf::Image image;
-  sf::Vector2f pos;
-  fade.load_content("", image, pos);
+  file.load_content("H:/QtBuilds/PandaGame/load/splash.txt", attributes,
+                    contents);
+  //  sf::Image image;
+  //  sf::Vector2f pos;
+  //  fade.load_content("", image, pos);
 }
 
 void ScreenManager::load_content() {
@@ -34,7 +36,7 @@ void ScreenManager::unload_content() {}
 void ScreenManager::update(sf::RenderWindow &window, sf::Event event,
                            sf::Time delta_time) {
   if (!transition) {
-    current_screen->update(window, event);
+    current_screen->update(window, event, delta_time);
   }
   Transition(delta_time);
 }
