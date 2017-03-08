@@ -3,4 +3,6 @@
 Welcome!
 
 
-Horizontal sidescroller game using C++ and SFML 2D Game
+<<<Currently in Progress>
+
+2D Horizontal Sidescroller Game using C++ and SFML
